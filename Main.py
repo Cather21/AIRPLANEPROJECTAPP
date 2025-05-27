@@ -51,7 +51,11 @@ def load_data():
         "Mid 1950s", "Late 1960s", "Early 1980s", "Early 1990s",
         "Early 2000s", "Late 2000s", "Mid 2020s"
     ]
-    df['year_bin'] = pd.Categorical(df['year_bin'], categories=labels, ordered=True)
+
+df['year_bin'] = pd.cut(df['year'], bins=bins, labels=labels, include_lowest=True)
+
+
+df['year_bin'] = pd.Categorical(df['year_bin'], categories=labels, ordered=True)
     
 # define mapping from month name to season
     season_map={"december":"Winter", "january":"Winter", "february":"Winter", "march":"Spring","april":"Spring",
