@@ -45,11 +45,11 @@ def load_data():
 
 
 # Add decade/period bins
-    bins = [1908, 1920, 1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2020, 2024]
+    bins = [1908, 1920, 1933, 1944, 1955, 1967, 1980, 1991, 2002, 2013, 2024]
     labels = [
-        "Early 1910s", "Mid 1920s", "Late 1930s", "Early 1940s",
-        "Mid 1950s", "Late 1960s", "Early 1970s", "Late 1980s",
-        "Early 2000s", "Mid 2010s", "Early 2020s"
+        "Late 1900s", "Early 1920s", "Mid 1930s",
+        "Mid 1950s", "Late 1960s", "Early 1980s", "Early 1990s"
+        "Early 2000s", "Late 2000s", "Mid 2020s"
     ]
     df['year_bin'] = pd.cut(df['year'], bins=bins, labels=labels, include_lowest=True)
 
