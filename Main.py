@@ -188,7 +188,7 @@ crashes_by_decade = (
 )                     
 
 chart5 = alt.Chart(crashes_by_decade).mark_bar().encode(
-    x=alt.X("year_bin:N", title="Decade", sort='-x'),
+    x=alt.X("year_bin:N", title="Decade", sort='-y'),
     y=alt.Y("fatalities_air:Q", title="Total Fatalities"),
     color=alt.Color("year_bin:N", legend=None)
 ).properties(height=350)
