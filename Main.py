@@ -181,7 +181,7 @@ st.subheader(" Crashes by Decade")
 crashes_by_decade = filtered_df.groupby("year_bin", observed=False)["fatalities_air"].sum().reset_index()
 
 chart5 = alt.Chart(crashes_by_decade).mark_bar().encode(
-    x=alt.X("year_bin:N", title="Decade", sort=labels),
+    x=alt.X("year_bin:N", title="Decade", sort='-y'),
     y=alt.Y("fatalities_air:Q", title="Total Fatalities"),
     color=alt.Color("year_bin:N", legend=None)
 ).properties(height=350)
