@@ -17,6 +17,7 @@ def load_data():
 
 # Now fill essential missing values
     df['country_region'] = df.get('country_region', pd.Series()).fillna("Unknown")
+    df['country_region'] = df['country_region'].str.strip().replace("'-", 'Unknown')
     df['operator'] = df.get('operator', pd.Series()).fillna("Unknown")
     df['aircraft_manufacturer'] = df.get('aircraft_manufacturer', pd.Series()).fillna("Unknown")
 
