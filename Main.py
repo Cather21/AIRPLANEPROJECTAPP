@@ -266,7 +266,7 @@ aboard_trend = (
 
 # Line chart using Altair
 chart_avg_aboard = alt.Chart(aboard_trend).mark_line(point=True).encode(
-    x=alt.X("year_bin:O", title="Year", sort='labels'),
+    x=alt.X("year_bin:O", title="Year"),
     y=alt.Y("aboard:Q", title="Average Aboard"),
     tooltip=["year_bin", alt.Tooltip("aboard:Q", title="Avg. Aboard", format=".1f")]
 ).properties(height=350)
