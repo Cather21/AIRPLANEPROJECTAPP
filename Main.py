@@ -181,12 +181,11 @@ st.subheader(" Crashes by Decade")
 crashes_by_decade = ( 
     filtered_df.groupby("year_bin", observed=False)["fatalities_air"]
     .sum()
-    .sort_index()
     .reset_index()
 )                     
 
 chart5 = alt.Chart(crashes_by_decade).mark_bar().encode(
-    x=alt.X("year_bin:N", title="Decade", sort='year_bin'),
+    x=alt.X("year_bin:N", title="Decade", sort='-y'),
     y=alt.Y("fatalities_air:Q", title="Total Fatalities"),
     color=alt.Color("year_bin:N", legend=None)
 ).properties(height=350)
@@ -267,7 +266,7 @@ aboard_trend = (
 
 # Line chart using Altair
 chart_avg_aboard = alt.Chart(aboard_trend).mark_line(point=True).encode(
-    x=alt.X("year_bin:O", title="Year", sort='-y'),
+    x=alt.X("year_bin:O", title="Year", sort='labels'),
     y=alt.Y("aboard:Q", title="Average Aboard"),
     tooltip=["year_bin", alt.Tooltip("aboard:Q", title="Avg. Aboard", format=".1f")]
 ).properties(height=350)
