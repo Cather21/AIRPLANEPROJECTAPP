@@ -23,10 +23,10 @@ def load_data():
 
     # Convert numeric columns
     df['year'] = pd.to_numeric(df['year'], errors='coerce')
-    df['day'] = pd.to_numeric(df.get('day', pd.Series()), errors='coerce')
-    df['aboard'] = pd.to_numeric(df.get('aboard', pd.Series()), errors='coerce')
-    df['fatalities_air'] = pd.to_numeric(df.get('fatalities_air', pd.Series()), errors='coerce')
-    df['ground'] = pd.to_numeric(df.get('ground', pd.Series()), errors='coerce')
+    df['day'] = pd.to_numeric(df['day'], errors='coerce')
+    df['aboard'] = pd.to_numeric(df['aboard'], errors='coerce')
+    df['fatalities_air'] = pd.to_numeric(df['fatalities_air'], errors='coerce')
+    df['ground'] = pd.to_numeric(df['ground'], errors='coerce')
 
  # Map month names to numbers
     month_map = {
