@@ -87,6 +87,8 @@ filters = {
     "operator": df["operator"].unique(),
     "country_region": df["country_region"].unique(),
     "aircraft_manufacturer": df["aircraft_manufacturer"].unique()
+    "aircraft": df["aircraft"].dropna().unique(),
+    "year": df["year"].dropna().unique()
 }
 
 selected_filters = {}
