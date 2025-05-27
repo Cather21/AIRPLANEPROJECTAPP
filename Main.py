@@ -260,8 +260,9 @@ aboard_trend_df = filtered_df.dropna(subset=["year_bin", "aboard"])
 aboard_trend = (
     aboard_trend_df.groupby("year_bin", observed=True)["aboard"]
     .mean()
+    .sort_index()
     .reset_index()
-    .sort_values("year_bin")
+    
 )
 
 # Line chart using Altair
