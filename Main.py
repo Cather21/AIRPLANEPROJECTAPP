@@ -58,9 +58,11 @@ df['year_bin'] = pd.cut(df['year'], bins=bins, labels=labels, include_lowest=Tru
 df['year_bin'] = pd.Categorical(df['year_bin'], categories=labels, ordered=True)
     
 # define mapping from month name to season
-    season_map={"december":"Winter", "january":"Winter", "february":"Winter", "march":"Spring","april":"Spring",
+    season_map= {
+        "december":"Winter", "january":"Winter", "february":"Winter", "march":"Spring","april":"Spring",
              "may":"Spring", "june":"Summer", "july":"Summer", "august":"Summer", "september":"Autumn/Fall",
-             "october":"Autumn/Fall", "november":"Autumn/Fall"}
+             "october":"Autumn/Fall", "november":"Autumn/Fall"
+    }
     
     df['month'] = df['month'].str.lower()
     df['season'] = df['month'].str.lower().map(season_map)
