@@ -22,7 +22,7 @@ def load_data():
     df['aircraft_manufacturer'] = df.get('aircraft_manufacturer', pd.Series()).fillna("Unknown")
 
     # Convert numeric columns
-    df['year'] = pd.to_numeric(df.get('year', pd.Series()), errors='coerce')
+    df['year'] = pd.to_numeric(df['year'], errors='coerce')
     df['day'] = pd.to_numeric(df.get('day', pd.Series()), errors='coerce')
     df['aboard'] = pd.to_numeric(df.get('aboard', pd.Series()), errors='coerce')
     df['fatalities_air'] = pd.to_numeric(df.get('fatalities_air', pd.Series()), errors='coerce')
@@ -88,7 +88,7 @@ filters = {
     "country_region": df["country_region"].unique(),
     "aircraft_manufacturer": df["aircraft_manufacturer"].unique(),
     "aircraft": df["aircraft"].dropna().unique(),
-    "year": df["year"].dropna().unique()
+    "year": sorted(df["year"].dropna().unique())
 }
 
 selected_filters = {}
