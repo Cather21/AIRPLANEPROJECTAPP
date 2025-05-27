@@ -178,7 +178,12 @@ st.altair_chart(chart4, use_container_width=True)
 #  Bar Chart: Crashes Over The Years
 st.subheader(" Crashes by Decade")
 
-crashes_by_decade = filtered_df.groupby("year_bin", observed=False)["fatalities_air"].sum().sort_index().reset_index()
+crashes_by_decade = ( 
+    filtered_df.groupby("year_bin", observed=False)["fatalities_air"]
+    .sum()
+    .sort_index()
+    .reset_index()
+)                     
 
 chart5 = alt.Chart(crashes_by_decade).mark_bar().encode(
     x=alt.X("year_bin:N", title="Decade"),
