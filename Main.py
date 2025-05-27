@@ -52,10 +52,8 @@ def load_data():
         "Early 2000s", "Late 2000s", "Mid 2020s"
     ]
 
-df['year_bin'] = pd.cut(df['year'], bins=bins, labels=labels, include_lowest=True)
-
-
-df['year_bin'] = pd.Categorical(df['year_bin'], categories=labels, ordered=True)
+    df['year_bin'] = pd.cut(df['year'], bins=bins, labels=labels, include_lowest=True)
+    df['year_bin'] = pd.Categorical(df['year_bin'], categories=labels, ordered=True)
     
 # define mapping from month name to season
     season_map= {
