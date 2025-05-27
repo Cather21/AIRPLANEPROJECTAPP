@@ -180,6 +180,7 @@ st.subheader(" Crashes by Decade")
 
 crashes_by_decade = ( 
     filtered_df.groupby("year_bin", observed=False)["fatalities_air"]
+    .sum()
     .value_counts()
     .sort_index()
     .reset_index()
